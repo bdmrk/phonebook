@@ -32656,9 +32656,12 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("nav", { staticClass: "panel" }, [
+    return _c("nav", { staticClass: "panel column is-offset-2 is-8" }, [
       _c("p", { staticClass: "panel-heading" }, [
-        _vm._v("\n    repositories\n  ")
+        _vm._v("\n    VueJs Phone Book\n    "),
+        _c("button", { staticClass: "button is-primary  is-outlined " }, [
+          _vm._v("\n      Add New\n    ")
+        ])
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "panel-block" }, [
@@ -32677,89 +32680,11 @@ var staticRenderFns = [
         ])
       ]),
       _vm._v(" "),
-      _c("p", { staticClass: "panel-tabs" }, [
-        _c("a", { staticClass: "is-active" }, [_vm._v("all")]),
-        _vm._v(" "),
-        _c("a", [_vm._v("public")]),
-        _vm._v(" "),
-        _c("a", [_vm._v("private")]),
-        _vm._v(" "),
-        _c("a", [_vm._v("sources")]),
-        _vm._v(" "),
-        _c("a", [_vm._v("forks")])
-      ]),
-      _vm._v(" "),
-      _c("a", { staticClass: "panel-block is-active" }, [
-        _c("span", { staticClass: "panel-icon" }, [
-          _c("i", {
-            staticClass: "fas fa-book",
-            attrs: { "aria-hidden": "true" }
-          })
-        ]),
-        _vm._v("\n    bulma\n  ")
-      ]),
-      _vm._v(" "),
       _c("a", { staticClass: "panel-block" }, [
+        _vm._v("\n    \n    marksheet\n\n    "),
         _c("span", { staticClass: "panel-icon" }, [
-          _c("i", {
-            staticClass: "fas fa-book",
-            attrs: { "aria-hidden": "true" }
-          })
-        ]),
-        _vm._v("\n    marksheet\n  ")
-      ]),
-      _vm._v(" "),
-      _c("a", { staticClass: "panel-block" }, [
-        _c("span", { staticClass: "panel-icon" }, [
-          _c("i", {
-            staticClass: "fas fa-book",
-            attrs: { "aria-hidden": "true" }
-          })
-        ]),
-        _vm._v("\n    minireset.css\n  ")
-      ]),
-      _vm._v(" "),
-      _c("a", { staticClass: "panel-block" }, [
-        _c("span", { staticClass: "panel-icon" }, [
-          _c("i", {
-            staticClass: "fas fa-book",
-            attrs: { "aria-hidden": "true" }
-          })
-        ]),
-        _vm._v("\n    jgthms.github.io\n  ")
-      ]),
-      _vm._v(" "),
-      _c("a", { staticClass: "panel-block" }, [
-        _c("span", { staticClass: "panel-icon" }, [
-          _c("i", {
-            staticClass: "fas fa-code-branch",
-            attrs: { "aria-hidden": "true" }
-          })
-        ]),
-        _vm._v("\n    daniellowtw/infboard\n  ")
-      ]),
-      _vm._v(" "),
-      _c("a", { staticClass: "panel-block" }, [
-        _c("span", { staticClass: "panel-icon" }, [
-          _c("i", {
-            staticClass: "fas fa-code-branch",
-            attrs: { "aria-hidden": "true" }
-          })
-        ]),
-        _vm._v("\n    mojs\n  ")
-      ]),
-      _vm._v(" "),
-      _c("label", { staticClass: "panel-block" }, [
-        _c("input", { attrs: { type: "checkbox" } }),
-        _vm._v("\n    remember me\n  ")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "panel-block" }, [
-        _c(
-          "button",
-          { staticClass: "button is-link is-outlined is-fullwidth" },
-          [_vm._v("\n      reset all filters\n    ")]
-        )
+          _c("i", { staticClass: "fas fa-trash-alt" })
+        ])
       ])
     ])
   }
@@ -32877,12 +32802,7 @@ var staticRenderFns = [
         { staticClass: "navbar-item", attrs: { href: "https://xendsoft.com" } },
         [
           _c("img", {
-            attrs: {
-              src: "images/xend.png",
-              alt: "Kausar",
-              width: "150",
-              height: "70"
-            }
+            attrs: { src: "", alt: "Kausar", width: "150", height: "70" }
           })
         ]
       ),
