@@ -10,18 +10,18 @@
     <p class="control has-icons-left">
       <input class="input is-small" type="text" placeholder="search">
       <span class="icon is-small is-left">
-      <i class="fas fa-search"></i>
+      <i class="fa fa-search"></i>
       </span>
     </p>
   </div>
   
   <a class="panel-block">
-    
+  
     marksheet
     <span class="panel-icon">
-<i class="fas fa-trash-alt"></i>
-</span>
-  </a>
+<i class="fa fa-trash" aria-hidden="true"></i>
+    </span>
+</a>
   
 </nav>
 </template>

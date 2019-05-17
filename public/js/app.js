@@ -32672,18 +32672,18 @@ var staticRenderFns = [
           }),
           _vm._v(" "),
           _c("span", { staticClass: "icon is-small is-left" }, [
-            _c("i", {
-              staticClass: "fas fa-search",
-              attrs: { "aria-hidden": "true" }
-            })
+            _c("i", { staticClass: "fa fa-search" })
           ])
         ])
       ]),
       _vm._v(" "),
       _c("a", { staticClass: "panel-block" }, [
-        _vm._v("\n    \n    marksheet\n\n    "),
+        _vm._v("\n  \n    marksheet\n    "),
         _c("span", { staticClass: "panel-icon" }, [
-          _c("i", { staticClass: "fas fa-trash-alt" })
+          _c("i", {
+            staticClass: "fa fa-trash",
+            attrs: { "aria-hidden": "true" }
+          })
         ])
       ])
     ])
