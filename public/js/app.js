@@ -32678,10 +32678,27 @@ var staticRenderFns = [
       ]),
       _vm._v(" "),
       _c("a", { staticClass: "panel-block" }, [
-        _vm._v("\n  \n    marksheet\n    "),
-        _c("span", { staticClass: "panel-icon" }, [
+        _c("div", { staticClass: "column is-9" }, [
+          _vm._v("\n\n    marksheet\n  ")
+        ]),
+        _vm._v(" "),
+        _c("span", { staticClass: "panel-icon column _is-1" }, [
           _c("i", {
-            staticClass: "fa fa-trash",
+            staticClass: "has-text-danger fa fa-trash",
+            attrs: { "aria-hidden": "true" }
+          })
+        ]),
+        _vm._v(" "),
+        _c("span", { staticClass: "panel-icon column _is-1" }, [
+          _c("i", {
+            staticClass: " has-text-info fa fa-edit",
+            attrs: { "aria-hidden": "true" }
+          })
+        ]),
+        _vm._v(" "),
+        _c("span", { staticClass: "panel-icon column _is-1" }, [
+          _c("i", {
+            staticClass: "has-text-success fa fa-eye",
             attrs: { "aria-hidden": "true" }
           })
         ])

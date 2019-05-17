@@ -17,9 +17,18 @@
   
   <a class="panel-block">
   
+  <div class="column is-9">
+
     marksheet
-    <span class="panel-icon">
-<i class="fa fa-trash" aria-hidden="true"></i>
+  </div>
+    <span class="panel-icon column _is-1">
+      <i class="has-text-danger fa fa-trash" aria-hidden="true"></i>
+    </span>
+     <span class="panel-icon column _is-1">
+      <i class=" has-text-info fa fa-edit" aria-hidden="true"></i>
+    </span>
+     <span class="panel-icon column _is-1">
+      <i class="has-text-success fa fa-eye" aria-hidden="true"></i>
     </span>
 </a>
   
