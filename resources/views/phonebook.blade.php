@@ -15,6 +15,7 @@
 
     <div class="container">
          <router-view></router-view>
+         <Add></Add>
     </div>
 
     
