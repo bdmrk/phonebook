@@ -1,8 +1,11 @@
 <template>
+
+<div>
+
     <nav class="panel column is-offset-2 is-8">
   <p class="panel-heading">
     VueJs Phone Book
-    <button class="button is-primary  is-outlined ">
+    <button class="button is-primary  is-outlined" @click="openAdd">
       Add New
     </button>
   </p>
@@ -33,4 +36,33 @@
 </a>
   
 </nav>
+         <Add :openmodal ='addActive' @closeRequest='closeModal'></Add>
+
+</div>
+
+
 </template>
+
+<script>
+let Add =Vue.component('Add', require('./Add.vue').default);
+
+export default {
+   components:{Add},
+
+   data() {
+      return{
+        addActive: ''
+      }
+   },
+
+   methods: {
+     openAdd() {
+       this.addActive = 'is-active'
+     },
+     closeModal() 
+     {
+       this.addActive= ''
+     },
+   },
+}
+</script>

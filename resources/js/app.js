@@ -17,7 +17,6 @@ let Myfooter =Vue.component('Myfooter', require('./components/Myfooter.vue').def
 
 let Home =Vue.component('Home', require('./components/Home.vue').default);
 let About =Vue.component('About', require('./components/About.vue').default);
-let Add =Vue.component('About', require('./components/Add.vue').default);
 
 
 
@@ -36,5 +35,5 @@ const routes = [
 const app = new Vue({
     el: '#app',
     router,
-    components: {Myheader,Myfooter,Add}
+    components: {Myheader,Myfooter}
 });
