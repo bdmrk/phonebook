@@ -89,4 +89,8 @@ class PhonebookController extends Controller
     {
         //
     }
+
+    public function getData() {
+        return Phonebook::all();
+    }
 }
