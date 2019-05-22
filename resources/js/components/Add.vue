@@ -61,9 +61,11 @@
         }
     },
     methods:{
+
       closeModal(){
         this.$emit('closeRequest')
       },
+
       saveContact() {
         axios.post('/phonebook', this.$data.list).then((response) => this.closeModal())
                 .catch((error) => this.errors = error.response.data.errors)
