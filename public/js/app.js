@@ -1897,6 +1897,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 var Add = Vue.component('Add', __webpack_require__(/*! ./Add.vue */ "./resources/js/components/Add.vue")["default"]);
 var Show = Vue.component('Show', __webpack_require__(/*! ./Show.vue */ "./resources/js/components/Show.vue")["default"]);
 var Update = Vue.component('Update', __webpack_require__(/*! ./Update.vue */ "./resources/js/components/Update.vue")["default"]);
@@ -1913,7 +1916,9 @@ var Update = Vue.component('Update', __webpack_require__(/*! ./Update.vue */ "./
       updateActive: '',
       lists: {},
       //to get data
-      errors: {} //to get error
+      errors: {},
+      //to get error
+      loading: false //for loading
 
     };
   },
@@ -1939,6 +1944,21 @@ var Update = Vue.component('Update', __webpack_require__(/*! ./Update.vue */ "./
       this.$children[2].list = this.lists[key]; //to get updatable data key 2 is use
 
       this.updateActive = 'is-active';
+    },
+    del: function del(key, id) {
+      var _this2 = this;
+
+      if (confirm("Are you sure ?")) {
+        this.loading = !this.loading;
+        console.log("".concat(key, " ").concat(id));
+        axios["delete"]("/phonebook/".concat(id)).then(function (response) {
+          _this2.lists.splice(key, 1);
+
+          _this2.loading = !_this2.loading;
+        })["catch"](function (error) {
+          return _this2.errors = error.response.data.errors;
+        });
+      }
     },
     closeModal: function closeModal() {
       this.addActive = this.showActive = this.updateActive = '';
@@ -33155,7 +33175,13 @@ var render = function() {
                 on: { click: _vm.openAdd }
               },
               [_vm._v("\n                Add New\n            ")]
-            )
+            ),
+            _vm._v(" "),
+            _vm.loading
+              ? _c("span", { staticClass: "is-pulled-right" }, [
+                  _c("i", { staticClass: "fa fa-refresh fa-spin fa-2x fa-fw" })
+                ])
+              : _vm._e()
           ]),
           _vm._v(" "),
           _vm._m(0),
@@ -33168,7 +33194,17 @@ var render = function() {
                 )
               ]),
               _vm._v(" "),
-              _vm._m(1, true),
+              _c("span", { staticClass: "panel-icon column _is-1" }, [
+                _c("i", {
+                  staticClass: "has-text-danger fa fa-trash",
+                  attrs: { "aria-hidden": "true" },
+                  on: {
+                    click: function($event) {
+                      return _vm.del(key, item.id)
+                    }
+                  }
+                })
+              ]),
               _vm._v(" "),
               _c("span", { staticClass: "panel-icon column _is-1" }, [
                 _c("i", {
@@ -33233,17 +33269,6 @@ var staticRenderFns = [
           _c("i", { staticClass: "fa fa-search" })
         ])
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("span", { staticClass: "panel-icon column _is-1" }, [
-      _c("i", {
-        staticClass: "has-text-danger fa fa-trash",
-        attrs: { "aria-hidden": "true" }
-      })
     ])
   }
 ]
