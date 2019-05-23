@@ -1830,7 +1830,9 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.post('/phonebook', this.$data.list).then(function (response) {
-        return _this.closeModal();
+        _this.closeModal();
+
+        _this.$parent.lists.push(_this.$data.list);
       })["catch"](function (error) {
         return _this.errors = error.response.data.errors;
       });

@@ -67,7 +67,10 @@
       },
 
       saveContact() {
-        axios.post('/phonebook', this.$data.list).then((response) => this.closeModal())
+        axios.post('/phonebook', this.$data.list).then((response) => {
+          this.closeModal()
+          this.$parent.lists.push(this.$data.list)
+        })
                 .catch((error) => this.errors = error.response.data.errors)
       },
     },

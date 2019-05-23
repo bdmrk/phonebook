@@ -90,8 +90,6 @@
 
             del(key,id) {
 
-
-
                 if(confirm("Are you sure ?")) {
                     this.loading = !this.loading
                     console.log(`${key} ${id}`)
@@ -102,8 +100,6 @@
                         })
                         .catch((error) => this.errors = error.response.data.errors)
                 }
-
-
 
             },
 
