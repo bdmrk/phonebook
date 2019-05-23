@@ -63,6 +63,6 @@ class PhonebookController extends Controller
     }
 
     public function getData() {
-        return Phonebook::all();
+        return Phonebook::orderBy('name', 'ASC')->get();
     }
 }

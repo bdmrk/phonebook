@@ -1832,7 +1832,18 @@ __webpack_require__.r(__webpack_exports__);
       axios.post('/phonebook', this.$data.list).then(function (response) {
         _this.closeModal();
 
-        _this.$parent.lists.push(response.data);
+        _this.$parent.lists.push(response.data); //for sorting in vue we add this function
+
+
+        _this.$parent.lists.sort(function (a, b) {
+          if (a.name > b.name) {
+            return 1;
+          } else if (a.name < b.name) {
+            return -1;
+          }
+        });
+
+        _this.list = "";
       })["catch"](function (error) {
         return _this.errors = error.response.data.errors;
       });

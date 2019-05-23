@@ -68,8 +68,23 @@
 
       saveContact() {
         axios.post('/phonebook', this.$data.list).then((response) => {
+
           this.closeModal()
+
           this.$parent.lists.push(response.data)
+
+          //for sorting in vue we add this function
+
+          this.$parent.lists.sort(function (a,b) {
+            if(a.name > b.name) {
+              return 1;
+            } else if (a.name <b.name) {
+              return -1;
+            }
+
+          })
+          this.list = ""
+
         })
                 .catch((error) => this.errors = error.response.data.errors)
       },
