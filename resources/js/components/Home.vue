@@ -19,7 +19,7 @@
                 </p>
             </div>
 
-            <a class="panel-block" v-for="item,key in lists">
+            <a class="panel-block" v-for="item, key in lists">
 
                 <div class="column is-9">
                     {{item.name}}
@@ -29,7 +29,7 @@
       <i class="has-text-danger fa fa-trash" aria-hidden="true"></i>
     </span>
                 <span class="panel-icon column _is-1">
-      <i class=" has-text-info fa fa-edit" aria-hidden="true"></i>
+      <i class=" has-text-info fa fa-edit" aria-hidden="true" @click="openUpdate(key)"></i>
     </span>
                 <span class="panel-icon column _is-1">
       <i class="has-text-success fa fa-eye" aria-hidden="true" @click="openShow(key)"></i>
@@ -39,6 +39,7 @@
         </nav>
         <Add :openmodal ='addActive' @closeRequest='closeModal'></Add>
         <Show :openmodal ='showActive' @closeRequest='closeModal'></Show>
+        <Update :openmodal ='updateActive' @closeRequest='closeModal'></Update>
 
     </div>
 
@@ -48,14 +49,16 @@
 <script>
     let Add =Vue.component('Add', require('./Add.vue').default);
     let Show =Vue.component('Show', require('./Show.vue').default);
+    let Update =Vue.component('Update', require('./Update.vue').default);
 
 
     export default {
-        components:{Add, Show},
+        components:{Add, Show, Update},
         data() {
             return{
                 addActive: '',
                 showActive: '',
+                updateActive: '',
                 lists: {}, //to get data
                 errors:{}, //to get error
             }
@@ -76,12 +79,17 @@
                 this.showActive = 'is-active'
             },
 
+            openUpdate(key) {
+                this.$children[2].list = this.lists[key] //to get updatable data key 2 is use
+                this.updateActive = 'is-active'
+            },
 
             closeModal()
             {
 
-                    this.addActive = this.showActive = ''
+                this.addActive = this.showActive = this.updateActive = ''
             },
+
         },
     }
 </script>
