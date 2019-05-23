@@ -1832,7 +1832,7 @@ __webpack_require__.r(__webpack_exports__);
       axios.post('/phonebook', this.$data.list).then(function (response) {
         _this.closeModal();
 
-        _this.$parent.lists.push(_this.$data.list);
+        _this.$parent.lists.push(response.data);
       })["catch"](function (error) {
         return _this.errors = error.response.data.errors;
       });
@@ -1961,6 +1961,8 @@ var Update = Vue.component('Update', __webpack_require__(/*! ./Update.vue */ "./
           return _this2.errors = error.response.data.errors;
         });
       }
+
+      console.log("".concat(key, " ").concat(id));
     },
     closeModal: function closeModal() {
       this.addActive = this.showActive = this.updateActive = '';

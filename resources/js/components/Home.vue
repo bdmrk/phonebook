@@ -101,6 +101,8 @@
                         .catch((error) => this.errors = error.response.data.errors)
                 }
 
+                console.log(`${key} ${id}`)
+
             },
 
             closeModal()
